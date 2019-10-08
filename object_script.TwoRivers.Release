@@ -1,0 +1,15 @@
+INPUT(
+./release/main.o
+./release/mainwindow.o
+./release/employee.o
+./release/employeelist.o
+./release/employeehandler.o
+./release/employeereader.o
+./release/employeewriter.o
+./release/model.o
+./release/employeeabsmodel.o
+./release/simplewriter.o
+./release/moc_mainwindow.o
+./release/moc_employeehandler.o
+./release/moc_employeeabsmodel.o
+);

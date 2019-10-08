@@ -1,0 +1,15 @@
+INPUT(
+./debug/main.o
+./debug/mainwindow.o
+./debug/employee.o
+./debug/employeelist.o
+./debug/employeehandler.o
+./debug/employeereader.o
+./debug/employeewriter.o
+./debug/model.o
+./debug/employeeabsmodel.o
+./debug/simplewriter.o
+./debug/moc_mainwindow.o
+./debug/moc_employeehandler.o
+./debug/moc_employeeabsmodel.o
+);

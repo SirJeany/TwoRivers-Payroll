@@ -1,0 +1,107 @@
+<EmployeeList>
+ <Employee>
+  <firstname>Jean</firstname>
+  <lastname>van</lastname>
+  <gender>Female</gender>
+  <amos_rating>20</amos_rating>
+  <bonus_rate>32</bonus_rate>
+  <days_worked>20</days_worked>
+  <rate_per_day>200</rate_per_day>
+  <salary>4640</salary>
+  <incentive>50</incentive>
+  <bonus>500</bonus>
+  <debt>800</debt>
+  <net_salary>4390</net_salary>
+  <notes>New worker</notes>
+ </Employee>
+ <Employee>
+  <firstname>Bry</firstname>
+  <lastname>Say</lastname>
+  <gender>Male</gender>
+  <amos_rating>11</amos_rating>
+  <bonus_rate>50</bonus_rate>
+  <days_worked>25</days_worked>
+  <rate_per_day>55</rate_per_day>
+  <salary>1925</salary>
+  <incentive>500</incentive>
+  <bonus>600</bonus>
+  <debt>100</debt>
+  <net_salary>2925</net_salary>
+  <notes>GRRR</notes>
+ </Employee>
+ <Employee>
+  <firstname>Maree</firstname>
+  <lastname>Jean</lastname>
+  <gender>Female</gender>
+  <amos_rating>94</amos_rating>
+  <bonus_rate>20</bonus_rate>
+  <days_worked>28</days_worked>
+  <rate_per_day>146</rate_per_day>
+  <salary>5968</salary>
+  <incentive>297</incentive>
+  <bonus>300</bonus>
+  <debt>53</debt>
+  <net_salary>6512</net_salary>
+  <notes>Thhis s just a test case..</notes>
+ </Employee>
+ <Employee>
+  <firstname>Bryan</firstname>
+  <lastname>B</lastname>
+  <gender>Female</gender>
+  <amos_rating>100</amos_rating>
+  <bonus_rate>20</bonus_rate>
+  <days_worked>25</days_worked>
+  <rate_per_day>150</rate_per_day>
+  <salary>5750</salary>
+  <incentive>300</incentive>
+  <bonus>300</bonus>
+  <debt>50</debt>
+  <net_salary>6300</net_salary>
+  <notes>Thhis s just a test case..</notes>
+ </Employee>
+ <Employee>
+  <firstname>King</firstname>
+  <lastname>Ross</lastname>
+  <gender>Male</gender>
+  <amos_rating>2</amos_rating>
+  <bonus_rate>20</bonus_rate>
+  <days_worked>25</days_worked>
+  <rate_per_day>150</rate_per_day>
+  <salary>3790</salary>
+  <incentive>300</incentive>
+  <bonus>300</bonus>
+  <debt>50</debt>
+  <net_salary>4340</net_salary>
+  <notes>Thhis s just a test case..</notes>
+ </Employee>
+ <Employee>
+  <firstname>New Guy</firstname>
+  <lastname>Ded</lastname>
+  <gender>Female</gender>
+  <amos_rating>100</amos_rating>
+  <bonus_rate>20</bonus_rate>
+  <days_worked>25</days_worked>
+  <rate_per_day>150</rate_per_day>
+  <salary>5750</salary>
+  <incentive>300</incentive>
+  <bonus>300</bonus>
+  <debt>50</debt>
+  <net_salary>6300</net_salary>
+  <notes>Thhis s just a test case..</notes>
+ </Employee>
+ <Employee>
+  <firstname>Added</firstname>
+  <lastname>New</lastname>
+  <gender>Male</gender>
+  <amos_rating>5</amos_rating>
+  <bonus_rate>2</bonus_rate>
+  <days_worked>30</days_worked>
+  <rate_per_day>50</rate_per_day>
+  <salary>1510</salary>
+  <incentive>200</incentive>
+  <bonus>10</bonus>
+  <debt>1000</debt>
+  <net_salary>720</net_salary>
+  <notes>Thhis s just a test case..</notes>
+ </Employee>
+</EmployeeList>

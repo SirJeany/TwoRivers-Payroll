@@ -1,0 +1,17 @@
+<EmployeeList>
+ <Employee>
+  <firstname>Jean</firstname>
+  <lastname>Maree</lastname>
+  <gender>Male</gender>
+  <amos_rating>100</amos_rating>
+  <bonus_rate>50</bonus_rate>
+  <days_worked>21</days_worked>
+  <rate_per_day>30</rate_per_day>
+  <salary>5630</salary>
+  <incentive>1000</incentive>
+  <bonus>15</bonus>
+  <debt>800</debt>
+  <net_salary>5845</net_salary>
+  <notes>These are some new notes</notes>
+ </Employee>
+</EmployeeList>

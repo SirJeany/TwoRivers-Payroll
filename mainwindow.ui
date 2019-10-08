@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1301</width>
+    <height>524</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QVBoxLayout" name="verticalLayout_2">
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QLabel" name="headingLabel">
+        <property name="text">
+         <string>Month</string>
+        </property>
+        <property name="textFormat">
+         <enum>Qt::RichText</enum>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QFormLayout" name="formLayout">
+      <property name="sizeConstraint">
+       <enum>QLayout::SetDefaultConstraint</enum>
+      </property>
+      <property name="fieldGrowthPolicy">
+       <enum>QFormLayout::ExpandingFieldsGrow</enum>
+      </property>
+      <property name="rowWrapPolicy">
+       <enum>QFormLayout::DontWrapRows</enum>
+      </property>
+      <property name="labelAlignment">
+       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+      </property>
+      <property name="formAlignment">
+       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+      </property>
+      <property name="verticalSpacing">
+       <number>22</number>
+      </property>
+      <item row="0" column="0">
+       <widget class="QLabel" name="setBonusRateLabel">
+        <property name="text">
+         <string>Set Bonus Rate: </string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QSpinBox" name="setBonusRateSpinBox"/>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <widget class="QTableView" name="tableView">
+      <property name="sortingEnabled">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <item>
+       <widget class="QPushButton" name="writeToFileBtn">
+        <property name="text">
+         <string>Write to File</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1301</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="actionAdd"/>
+    <addaction name="separator"/>
+    <addaction name="actionAdd_File"/>
+    <addaction name="separator"/>
+    <addaction name="actionCreate_Payslip"/>
+    <addaction name="separator"/>
+   </widget>
+   <widget class="QMenu" name="menuPrint">
+    <property name="title">
+     <string>Print</string>
+    </property>
+    <widget class="QMenu" name="menuType_Here">
+     <property name="title">
+      <string>Save As</string>
+     </property>
+    </widget>
+    <widget class="QMenu" name="menuProduce_Monthly_Payslip">
+     <property name="title">
+      <string>Produce Monthly Payslip</string>
+     </property>
+     <addaction name="actionMales_Payslip"/>
+     <addaction name="actionFemales_Payslip"/>
+     <addaction name="actionAll_Payslip"/>
+    </widget>
+    <addaction name="actionProduce_Individual_Payslip"/>
+    <addaction name="separator"/>
+    <addaction name="menuProduce_Monthly_Payslip"/>
+    <addaction name="menuType_Here"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuPrint"/>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <action name="actionAdd">
+   <property name="text">
+    <string>Add Single</string>
+   </property>
+  </action>
+  <action name="actionAdd_File">
+   <property name="text">
+    <string>Add File</string>
+   </property>
+  </action>
+  <action name="actionCreate_Payslip">
+   <property name="text">
+    <string>Create Payslip</string>
+   </property>
+  </action>
+  <action name="actionProduce_Individual_Payslip">
+   <property name="text">
+    <string>Produce Individual Payslip</string>
+   </property>
+  </action>
+  <action name="actionMales_Payslip">
+   <property name="text">
+    <string>Men</string>
+   </property>
+  </action>
+  <action name="actionFemales_Payslip">
+   <property name="text">
+    <string>Women</string>
+   </property>
+  </action>
+  <action name="actionAll_Payslip">
+   <property name="text">
+    <string>All</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>
