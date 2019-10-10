@@ -1,0 +1,8 @@
+,,Two River Farm Wages
+,,(Date - Month)
+,Men,Amos Rating,Bonus Rate,Days Worked,Rate Per Day,Salary,Incentive,Bonus,Debt,Net,Notes
+,Jean van,20,32,20,200,4640,50,500,800,4390,New worker,
+,Maree Jean,94,20,28,146,5968,297,300,53,6512,Thhis s just a test case..,
+,Bryan B,100,20,25,150,5750,300,300,50,6300,Thhis s just a test case..,
+,New Guy Ded,100,20,25,150,5750,300,300,50,6300,Thhis s just a test case..
+,,=SUM(C4:C7),=SUM(D4:D7), , ,=SUM(G4:G7),=SUM(H4:H7),=SUM(I4:I7),=SUM(J4:J7),=SUM(K4:K7)
