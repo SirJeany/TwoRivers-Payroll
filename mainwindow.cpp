@@ -28,6 +28,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->tableView->setColumnWidth(1,20);
 
     ui->tableView->setModel(myModel);
+    ui->comboBox_Employees->setModel(myModel);
 
     addBtn = new QPushButton(tr("Voeg By"));
     connect(addBtn, SIGNAL(clicked()), this, SLOT(addEmployee()));
@@ -218,7 +219,8 @@ void MainWindow::on_actionMales_Payslip_triggered()
 {
     QString filename = QFileDialog::getSaveFileName(this,
                                                     tr("Save to"),
-                                                    QDir::currentPath());
+                                                    QDir::currentPath(),
+                                                    tr("XLS Files (*.xls)"));
 
     QStringList as = handler.toStringList(true);
     handler.doSimpleWrite(filename, as, true);
@@ -228,8 +230,14 @@ void MainWindow::on_actionFemales_Payslip_triggered()
 {
     QString filename = QFileDialog::getSaveFileName(this,
                                                     tr("Save to"),
-                                                    QDir::currentPath());
+                                                    QDir::currentPath(),
+                                                    tr("XLS Files (*.xls)"));
 
     QStringList as = handler.toStringList(false);
     handler.doSimpleWrite(filename, as, false);
+}
+
+void MainWindow::on_pushButton_PrintPayslip_clicked()
+{
+    std::cout<<"To implement - Prints out the employee currently selected in the combo box."<<std::endl;
 }

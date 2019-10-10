@@ -61,12 +61,9 @@ QVariant EmployeeAbsModel::data(const QModelIndex &index, int role) const{
     int col = index.column();
     if(col >= columnCount()) return QVariant();
 
-    if(index.column() == 0 && role == Qt::CheckStateRole){
-        return Qt::Unchecked;
-    }
-    else if(role == Qt::DisplayRole){
-        return empList->getInfoAt(row, col); //move one up
-    }
+
+    if(role == Qt::DisplayRole)
+        return empList->getInfoAt(row, col);
 
     return QVariant();
 }
@@ -78,19 +75,6 @@ bool EmployeeAbsModel::setData(const QModelIndex &index, const QVariant &value, 
 
     int col = index.column();
     if(col >= columnCount()) return false;
-
-
-    //Handling the checked box.
-//    if(role == Qt::CheckStateRole){ // First column is the checkable column
-
-//        if(value == true){
-//            std::cout<<"True: "<<value.toString().toLocal8Bit().constData()<<std::endl;
-//            return Qt::Unchecked;
-//        }
-//        else{
-//            std::cout<<"False: "<<value.toString().toLocal8Bit().constData()<<std::endl;
-//            return Qt::Checked;
-//        }
 
     if(role == Qt::EditRole){
         QString newVal = empList->updateEmployee(row, col, value);
@@ -145,19 +129,11 @@ bool EmployeeAbsModel::setData(const QModelIndex &index, const QVariant &value, 
 
 
 Qt::ItemFlags EmployeeAbsModel::flags(const QModelIndex &index) const{
-//    if(index.column() == 0)// make the first column checkacble.
-//        return Qt::ItemIsUserCheckable | QAbstractTableModel::flags(index);
     return Qt::ItemIsEditable | QAbstractTableModel::flags(index);
-
-//    if(index.isValid()) return Qt::ItemIsEditable; // We want in-place editing in the actual view.
-//    else return 0;
 }
 
 bool EmployeeAbsModel::insertRows(int row, int count, const QModelIndex &parent){
     beginInsertRows(parent, 0, 0); // required
-
-    row = rowCount(); //eppend to the end
-    count = 1; // only one insertion aat a time
 
     std::cout<<"Added"<<std::endl;
 

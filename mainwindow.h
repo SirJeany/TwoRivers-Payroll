@@ -57,6 +57,8 @@ private slots:
 
     void on_actionFemales_Payslip_triggered();
 
+    void on_pushButton_PrintPayslip_clicked();
+
 signals:
     void editCompleted();
 

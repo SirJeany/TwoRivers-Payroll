@@ -13,6 +13,7 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
+#include <QtWidgets/QComboBox>
 #include <QtWidgets/QFormLayout>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
@@ -40,6 +41,7 @@ public:
     QAction *actionMales_Payslip;
     QAction *actionFemales_Payslip;
     QAction *actionAll_Payslip;
+    QAction *actionSet_Bonus_Multiplier;
     QWidget *centralWidget;
     QVBoxLayout *verticalLayout_2;
     QHBoxLayout *horizontalLayout;
@@ -49,12 +51,15 @@ public:
     QSpinBox *setBonusRateSpinBox;
     QTableView *tableView;
     QHBoxLayout *horizontalLayout_2;
+    QComboBox *comboBox_Employees;
+    QPushButton *pushButton_PrintPayslip;
     QPushButton *writeToFileBtn;
     QMenuBar *menuBar;
     QMenu *menuFile;
     QMenu *menuPrint;
     QMenu *menuType_Here;
     QMenu *menuProduce_Monthly_Payslip;
+    QMenu *menuSettings;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
 
@@ -77,6 +82,8 @@ public:
         actionFemales_Payslip->setObjectName(QStringLiteral("actionFemales_Payslip"));
         actionAll_Payslip = new QAction(MainWindow);
         actionAll_Payslip->setObjectName(QStringLiteral("actionAll_Payslip"));
+        actionSet_Bonus_Multiplier = new QAction(MainWindow);
+        actionSet_Bonus_Multiplier->setObjectName(QStringLiteral("actionSet_Bonus_Multiplier"));
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         verticalLayout_2 = new QVBoxLayout(centralWidget);
@@ -127,6 +134,16 @@ public:
         horizontalLayout_2 = new QHBoxLayout();
         horizontalLayout_2->setSpacing(6);
         horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
+        comboBox_Employees = new QComboBox(centralWidget);
+        comboBox_Employees->setObjectName(QStringLiteral("comboBox_Employees"));
+
+        horizontalLayout_2->addWidget(comboBox_Employees);
+
+        pushButton_PrintPayslip = new QPushButton(centralWidget);
+        pushButton_PrintPayslip->setObjectName(QStringLiteral("pushButton_PrintPayslip"));
+
+        horizontalLayout_2->addWidget(pushButton_PrintPayslip);
+
         writeToFileBtn = new QPushButton(centralWidget);
         writeToFileBtn->setObjectName(QStringLiteral("writeToFileBtn"));
 
@@ -147,6 +164,8 @@ public:
         menuType_Here->setObjectName(QStringLiteral("menuType_Here"));
         menuProduce_Monthly_Payslip = new QMenu(menuPrint);
         menuProduce_Monthly_Payslip->setObjectName(QStringLiteral("menuProduce_Monthly_Payslip"));
+        menuSettings = new QMenu(menuBar);
+        menuSettings->setObjectName(QStringLiteral("menuSettings"));
         MainWindow->setMenuBar(menuBar);
         mainToolBar = new QToolBar(MainWindow);
         mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
@@ -157,6 +176,7 @@ public:
 
         menuBar->addAction(menuFile->menuAction());
         menuBar->addAction(menuPrint->menuAction());
+        menuBar->addAction(menuSettings->menuAction());
         menuFile->addAction(actionAdd);
         menuFile->addSeparator();
         menuFile->addAction(actionAdd_File);
@@ -170,6 +190,7 @@ public:
         menuProduce_Monthly_Payslip->addAction(actionMales_Payslip);
         menuProduce_Monthly_Payslip->addAction(actionFemales_Payslip);
         menuProduce_Monthly_Payslip->addAction(actionAll_Payslip);
+        menuSettings->addAction(actionSet_Bonus_Multiplier);
 
         retranslateUi(MainWindow);
 
@@ -186,13 +207,16 @@ public:
         actionMales_Payslip->setText(QApplication::translate("MainWindow", "Men", 0));
         actionFemales_Payslip->setText(QApplication::translate("MainWindow", "Women", 0));
         actionAll_Payslip->setText(QApplication::translate("MainWindow", "All", 0));
+        actionSet_Bonus_Multiplier->setText(QApplication::translate("MainWindow", "Set Bonus Multiplier", 0));
         headingLabel->setText(QApplication::translate("MainWindow", "Month", 0));
         setBonusRateLabel->setText(QApplication::translate("MainWindow", "Set Bonus Rate: ", 0));
+        pushButton_PrintPayslip->setText(QApplication::translate("MainWindow", "Print Payslip", 0));
         writeToFileBtn->setText(QApplication::translate("MainWindow", "Write to File", 0));
         menuFile->setTitle(QApplication::translate("MainWindow", "File", 0));
         menuPrint->setTitle(QApplication::translate("MainWindow", "Print", 0));
         menuType_Here->setTitle(QApplication::translate("MainWindow", "Save As", 0));
         menuProduce_Monthly_Payslip->setTitle(QApplication::translate("MainWindow", "Produce Monthly Payslip", 0));
+        menuSettings->setTitle(QApplication::translate("MainWindow", "Settings", 0));
     } // retranslateUi
 
 };
