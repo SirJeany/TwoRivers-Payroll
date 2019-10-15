@@ -6,6 +6,7 @@
 EmployeeAbsModel::EmployeeAbsModel(QList<QAction *>, QObject *parent) :
     QAbstractTableModel(parent)
 {
+    std::cout<<"The wrong abstract model cntr is called"<<std::endl;
 }
 
 EmployeeAbsModel::EmployeeAbsModel(QObject *parent) :
@@ -81,9 +82,10 @@ bool EmployeeAbsModel::setData(const QModelIndex &index, const QVariant &value, 
 
         std::cout<<"Updated: "<<newVal.toLocal8Bit().constData()<<std::endl;
 
-        QModelIndex changedIndx = createIndex(row, 1);
-        emit dataChanged(changedIndx, changedIndx); //tells the view what to update
+
     }
+    QModelIndex changedIndx = createIndex(row, 1);
+    emit dataChanged(changedIndx, changedIndx); //tells the view what to update
     return true;
 }
 
@@ -133,9 +135,10 @@ Qt::ItemFlags EmployeeAbsModel::flags(const QModelIndex &index) const{
 }
 
 bool EmployeeAbsModel::insertRows(int row, int count, const QModelIndex &parent){
-    beginInsertRows(parent, 0, 0); // required
+//    beginInsertRows(parent, 0, 0); // required
+    beginInsertRows(QModelIndex(), 0, 0);
 
-    std::cout<<"Added"<<std::endl;
+    std::cout<<"Added "<<parent.data(Qt::EditRole).toString().toLocal8Bit().constData()<<" At: "<<row<<" . "<<count<<std::endl;
 
     endInsertRows();
 

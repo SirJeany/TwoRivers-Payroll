@@ -55,7 +55,7 @@
       <item row="0" column="0">
        <widget class="QLabel" name="setBonusRateLabel">
         <property name="text">
-         <string>Set Bonus Rate: </string>
+         <string>Set Bonus Rate (Not used): </string>
         </property>
        </widget>
       </item>
@@ -120,7 +120,7 @@
     </property>
     <widget class="QMenu" name="menuType_Here">
      <property name="title">
-      <string>Save As</string>
+      <string>Save As (Not implemented)</string>
      </property>
     </widget>
     <widget class="QMenu" name="menuProduce_Monthly_Payslip">
@@ -167,12 +167,12 @@
   </action>
   <action name="actionCreate_Payslip">
    <property name="text">
-    <string>Create Payslip</string>
+    <string>Create Payslip (Not yet)</string>
    </property>
   </action>
   <action name="actionProduce_Individual_Payslip">
    <property name="text">
-    <string>Produce Individual Payslip</string>
+    <string>Produce Individual Payslip (Not implemented</string>
    </property>
   </action>
   <action name="actionMales_Payslip">
@@ -192,7 +192,7 @@
   </action>
   <action name="actionSet_Bonus_Multiplier">
    <property name="text">
-    <string>Set Bonus Multiplier</string>
+    <string>Set Bonus Multiplier (Not Implemented)</string>
    </property>
   </action>
  </widget>

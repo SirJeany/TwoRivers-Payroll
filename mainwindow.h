@@ -37,7 +37,9 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
-    void buildTable(); //uses file to display all employees on table.
+     //uses file to display all employees on table.
+
+    void welcomePortal();
 
 private slots:
     void on_actionAdd_triggered();
@@ -58,6 +60,8 @@ private slots:
     void on_actionFemales_Payslip_triggered();
 
     void on_pushButton_PrintPayslip_clicked();
+
+    void buildTable();
 
 signals:
     void editCompleted();
@@ -98,6 +102,15 @@ private:
 
     QWidget *addEmpForm;
     QGridLayout *gridLayout;
+
+
+    // Welcome form:
+    QWidget *welcomeWindow;
+    QVBoxLayout *welcomeLayout;
+    QGroupBox *welcomeGB;
+
+    QLabel *welcomeLabel;
+    QPushButton *launchAppBtn;
 
 
     EmployeeHandler handler; //Holds employee data to be entered into QTableView.

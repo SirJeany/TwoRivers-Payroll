@@ -202,19 +202,19 @@ public:
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", 0));
         actionAdd->setText(QApplication::translate("MainWindow", "Add Single", 0));
         actionAdd_File->setText(QApplication::translate("MainWindow", "Add File", 0));
-        actionCreate_Payslip->setText(QApplication::translate("MainWindow", "Create Payslip", 0));
-        actionProduce_Individual_Payslip->setText(QApplication::translate("MainWindow", "Produce Individual Payslip", 0));
+        actionCreate_Payslip->setText(QApplication::translate("MainWindow", "Create Payslip (Not yet)", 0));
+        actionProduce_Individual_Payslip->setText(QApplication::translate("MainWindow", "Produce Individual Payslip (Not implemented", 0));
         actionMales_Payslip->setText(QApplication::translate("MainWindow", "Men", 0));
         actionFemales_Payslip->setText(QApplication::translate("MainWindow", "Women", 0));
         actionAll_Payslip->setText(QApplication::translate("MainWindow", "All", 0));
-        actionSet_Bonus_Multiplier->setText(QApplication::translate("MainWindow", "Set Bonus Multiplier", 0));
+        actionSet_Bonus_Multiplier->setText(QApplication::translate("MainWindow", "Set Bonus Multiplier (Not Implemented)", 0));
         headingLabel->setText(QApplication::translate("MainWindow", "Month", 0));
-        setBonusRateLabel->setText(QApplication::translate("MainWindow", "Set Bonus Rate: ", 0));
+        setBonusRateLabel->setText(QApplication::translate("MainWindow", "Set Bonus Rate (Not used): ", 0));
         pushButton_PrintPayslip->setText(QApplication::translate("MainWindow", "Print Payslip", 0));
         writeToFileBtn->setText(QApplication::translate("MainWindow", "Write to File", 0));
         menuFile->setTitle(QApplication::translate("MainWindow", "File", 0));
         menuPrint->setTitle(QApplication::translate("MainWindow", "Print", 0));
-        menuType_Here->setTitle(QApplication::translate("MainWindow", "Save As", 0));
+        menuType_Here->setTitle(QApplication::translate("MainWindow", "Save As (Not implemented)", 0));
         menuProduce_Monthly_Payslip->setTitle(QApplication::translate("MainWindow", "Produce Monthly Payslip", 0));
         menuSettings->setTitle(QApplication::translate("MainWindow", "Settings", 0));
     } // retranslateUi

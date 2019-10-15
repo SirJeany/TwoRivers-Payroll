@@ -13,18 +13,11 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
 
     buildTable(); //Take in existing data..
+
     ui->headingLabel->setText(currFileName);
 
-//    cout<<"Hendler: "<<handler.toString().toLocal8Bit().constData();
-      //Old model:
-
-//    table_model = new Model();
-
-//    ui->tableView->setModel(table_model->createModel(this, 4,3,2));
-//    ui->tableView->setModel(table_model->createModel(this, handler.getList()));
-
-
     myModel = new EmployeeAbsModel(this);
+
     ui->tableView->setColumnWidth(1,20);
 
     ui->tableView->setModel(myModel);
@@ -32,12 +25,52 @@ MainWindow::MainWindow(QWidget *parent) :
 
     addBtn = new QPushButton(tr("Voeg By"));
     connect(addBtn, SIGNAL(clicked()), this, SLOT(addEmployee()));
-//    connect(addBtn, SIGNAL(clicked()), myModel, SLOT(resetInternalData()));
+//    welcomePortal();
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
+}
+
+void MainWindow::welcomePortal(){
+
+    welcomeLayout = new QVBoxLayout;
+    welcomeWindow = new QWidget;
+
+    welcomeLabel = new QLabel;
+    QFont f( "Sans-Serif", 20, QFont::Bold);
+    welcomeLabel->setFont(f);
+    welcomeLabel->setText("Welcome to Two Rivers Payroll");
+
+    QLabel *descriptionLabel = new QLabel;
+    QFont a( "Arial", 10);
+    descriptionLabel->setFont(a);
+    QStringList bodyTextList;
+    bodyTextList.append("First time?\n\t");
+    bodyTextList.append("> Press 'Launch App' button. \n\t");
+    bodyTextList.append("> Cancel/exit the file selection window. \n\t");
+    bodyTextList.append("> Start adding your employees via File -> 'Add Employee'. \n\t");
+    bodyTextList.append("> Remember to save by clicking on 'write to file' at the bottom. This is the file you'll be using for\n\t");
+    bodyTextList.append("  capturing details the next month - so that you don't have to add every employee each time (just the new ones).");
+    descriptionLabel->setText(bodyTextList.join(""));
+//    descriptionLabel->setText(" ");
+
+    launchAppBtn = new QPushButton("Launch", welcomeWindow);
+
+    welcomeLayout->addWidget(welcomeLabel);
+    welcomeLayout->addWidget(descriptionLabel);
+    welcomeLayout->addWidget(launchAppBtn);
+
+    welcomeWindow->setWindowTitle("Two Rivers Payroll");
+    welcomeWindow->resize(500,500);
+    welcomeWindow->setLayout(welcomeLayout);
+    welcomeWindow->show();
+    welcomeWindow->activateWindow();
+    welcomeWindow->raise();
+
+    connect(launchAppBtn, SIGNAL(clicked()), this, SLOT(buildTable()));
+    connect(launchAppBtn, SIGNAL(clicked()), welcomeWindow, SLOT(close()));
 }
 
 void MainWindow::buildTable(){
@@ -50,7 +83,6 @@ void MainWindow::buildTable(){
         return;
 
     handler.doRead(currFileName);
-//    ui->tableView->windowTitleChanged(currFileName);
 }
 
 void MainWindow::refreshTable(){
@@ -87,10 +119,9 @@ void MainWindow::addEmployee(){
     addEmpForm->close();
     QMessageBox::information(addEmpForm, "Bygevoeg" , "\t\t\n" + fnameEdit->text());
 
-    //Temp add employee to view:
     myModel->insertRow(ui->tableView->currentIndex().row(),QModelIndex());
 
-    refreshTable();
+//    refreshTable();
 }
 
 void MainWindow::on_actionAdd_triggered()
@@ -193,10 +224,12 @@ void MainWindow::on_writeToFileBtn_clicked()
 void MainWindow::on_actionAdd_File_triggered()
 {
     buildTable();
+
 }
 
 void MainWindow::on_tableView_activated(const QModelIndex &index)
 {
+    //As to not get a warning:
     index.column();
 }
 
@@ -240,4 +273,6 @@ void MainWindow::on_actionFemales_Payslip_triggered()
 void MainWindow::on_pushButton_PrintPayslip_clicked()
 {
     std::cout<<"To implement - Prints out the employee currently selected in the combo box."<<std::endl;
+    int row = ui->comboBox_Employees->currentIndex();
+    std::cout<<handler.toString(row).toLocal8Bit().constData();
 }

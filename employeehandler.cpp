@@ -15,6 +15,9 @@ EmployeeHandler::EmployeeHandler(QObject *parent) :
 }
 
 void EmployeeHandler::addEmployee(QString fname, QString lname, bool g, double ar, double br, double dw, double rpd, double inc, double b, double debt, QString notes){
+    if(notes == ""){
+        notes = "_";
+    }
     Employee *e = new Employee(fname, lname, g, ar, br, dw, rpd, inc, b, debt, notes);
     empList->addEmployee(e);
 }
